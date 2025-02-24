@@ -15,7 +15,14 @@ app.use(express.json());
 
 // Routes
 app.use(cors());
+
 app.use("/bookings", bookingRoutes);
+app.get("/test", (req, res) => {
+  res.json({
+    message: "Hello World!",
+    timestamp: new Date().toISOString(),
+  });
+});
 
 // Error Handler
 app.use(errorHandler);
